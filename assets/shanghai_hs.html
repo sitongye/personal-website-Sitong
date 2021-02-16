@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_840079f566e04289ac63ed3668465ffe {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_840079f566e04289ac63ed3668465ffe" ></div>
+        
+</body>
+<script>    
+    
+            var map_840079f566e04289ac63ed3668465ffe = L.map(
+                "map_840079f566e04289ac63ed3668465ffe",
+                {
+                    center: [31.193096, 121.585441],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_42eb8b969d83439da0b3d6eb08ce31b0 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_840079f566e04289ac63ed3668465ffe);
+        
+    
+            var marker_3eaab6ad959b4aadbd5bea0d989c8450 = L.marker(
+                [31.193096, 121.585441],
+                {}
+            ).addTo(map_840079f566e04289ac63ed3668465ffe);
+        
+    
+        var popup_916cab9e59724375a71663c543cf5bbf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b69624f60b684062b169c2f67bc2162f = $(`<div id="html_b69624f60b684062b169c2f67bc2162f" style="width: 100.0%; height: 100.0%;">Shanghai International Studies University Affiliated Pudong Foreign Language School: 91 Da'erwen Rd, Pudong, Shanghai, China</div>`)[0];
+            popup_916cab9e59724375a71663c543cf5bbf.setContent(html_b69624f60b684062b169c2f67bc2162f);
+        
+
+        marker_3eaab6ad959b4aadbd5bea0d989c8450.bindPopup(popup_916cab9e59724375a71663c543cf5bbf)
+        ;
+
+        
+    
+</script>

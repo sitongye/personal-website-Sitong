@@ -1,0 +1,18 @@
+time,location,company,Role,Experience,location_key
+2020-07~current,"Bonn, Germany",Deutsche Telekom AG,"""Start up!"" Trainee Technology & Innovation","Performing data and intent classification model analysis and optimization
+implementing a dashboard for model evaluation and comparison
+Academic Research on Explainable AI
+Implementing Explainable AI algorithms on use cases
+Evaluating performances of various wake-up-word Models",bonn
+2019-12~2020-05,"Frankfurt, Germany",MHP Management- und IT-Beratung GmbH,Master Thesis Student,Natural Language Processing & Information Retrieval for Regulation Texts,frankfurt
+2019-03~2019-11,"Frankfurt, Germany",MHP Management- und IT-Beratung GmbH,Working Student in Data & Technology Cluster,"Performing data preparation and exploratory data analysis.
+Design and implementation of process time prediction with machine learning algorithms
+Design and implementation of similarity analysis of frequent sequential activities.
+Code refactoring and modularization with Python",frankfurt
+2018-01~2018-08,"Shanghai, China",Porsche (China) Motors Limited,Intern in the CRM Department,"Preparation of competitive analyses of competing products
+Support in the creation of a dynamic customer profiling as well as optimization of the CRM systems
+Coordination with dealers as well as external service providers and agencies
+Support in the conception and implementation of the online reservation project",shanghai_porsche
+2017-05~2018-01,"Shanghai, China",German Chamber of Commerce Shanghai Office,Intern in Media & Communication Department,"Research and preparation of content for the ""Information guide Germany 2017/2018"".
+Creation  of the weekly German ""China Press Monitoring E-Newsletter"" with 2,000 subscribers
+Support for media consulting and marketing activities of German companies in China",shanghai_ahk

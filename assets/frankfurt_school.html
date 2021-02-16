@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_419e40e963b54dea8697d70e1dfdb00b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_419e40e963b54dea8697d70e1dfdb00b" ></div>
+        
+</body>
+<script>    
+    
+            var map_419e40e963b54dea8697d70e1dfdb00b = L.map(
+                "map_419e40e963b54dea8697d70e1dfdb00b",
+                {
+                    center: [50.1329541, 8.6808203],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a0b5158c579a4d0cb5cadcd05ead1359 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_419e40e963b54dea8697d70e1dfdb00b);
+        
+    
+            var marker_f371e0c55cd74e1bbccdcb1f85a62786 = L.marker(
+                [50.1329541, 8.6808203],
+                {}
+            ).addTo(map_419e40e963b54dea8697d70e1dfdb00b);
+        
+    
+        var popup_6e79111fb92041489e7103b3497c6455 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8f501d286ad6466c9d9c772f1db9c6b6 = $(`<div id="html_8f501d286ad6466c9d9c772f1db9c6b6" style="width: 100.0%; height: 100.0%;">Frankfurt School of Finance & Management: Adickesallee 32-34, 60322 Frankfurt am Main</div>`)[0];
+            popup_6e79111fb92041489e7103b3497c6455.setContent(html_8f501d286ad6466c9d9c772f1db9c6b6);
+        
+
+        marker_f371e0c55cd74e1bbccdcb1f85a62786.bindPopup(popup_6e79111fb92041489e7103b3497c6455)
+        ;
+
+        
+    
+</script>

@@ -1,0 +1,63 @@
+{
+  "bonn": {
+    "geo": [
+      50.7087332,
+      7.1296882
+    ],
+    "Marker": "Deutsche Telekom AG:\nFriedrich-Ebert-Allee 140\n53113 Bonn"
+  },
+  "frankfurt": {
+    "geo": [
+      50.0563811,
+      8.5889322
+    ],
+    "Marker": "MHP A Porsche Company:\nEdmund-Rumpler-Straße 3\n60549 Frankfurt am Main"
+  },
+  "shanghai_porsche": {
+    "geo": [
+      31.212098,
+      121.535578
+    ],
+    "Marker": "Porsche (China) Motors Limited:\n308 Jinkang Rd, Century Park\nShanghai, China"
+  },
+  "shanghai_ahk": {
+    "geo": [
+      31.2011879,
+      121.478589718
+    ],
+    "Marker": "German Industry & Commerce Greater China Shanghai:\n29/F Gopher Center, No. 757 Mengzi Road \nHuangpu District, Shanghai 200023"
+  },
+  "frankfurt_school": {
+    "geo": [
+      50.1329541,
+      8.6808203
+    ],
+    "Marker": "Frankfurt School of Finance & Management:\nAdickesallee 32-34,\n60322 Frankfurt am Main"
+  },
+  "shanghai_fudan": {
+    "geo": [
+      31.2974197,
+      121.5036178
+    ],
+    "Marker": "Fudan University:\n220 Handan Rd, Wu Jiao Chang, Yangpu District,\nShanghai, China"
+  },
+  "konstanz": {
+    "geo": [
+      47.689426,
+      9.1868777
+    ],
+    "Marker": "University Konstanz:\nUniversitätsstraße 10,\n78464 Konstanz"
+  },
+  "shanghai_hs": {
+    "geo": [
+      31.193096, 121.585441
+    ],
+    "Marker": "Shanghai International Studies University Affiliated Pudong Foreign Language School:\n91 Da'erwen Rd,\nPudong, Shanghai, China"
+  },
+  "shanghai_museum": {
+    "geo": [
+      31.254309,121.509167
+    ],
+    "Marker": "Shanghai Jewish Refugees Museum:\n62 Changyang Rd,\nHongkou District, Shanghai, China"
+  }
+}
