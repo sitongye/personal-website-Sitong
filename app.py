@@ -18,7 +18,7 @@ upwork = app.get_asset_url("upwork.png")
 server = app.server
 
 # layout
-map_bonn = html.Iframe(srcDoc=open(r"./assets/bonn.html", 'r').read(),
+map_bonn = html.Iframe(src=r"./assets/bonn.html",
                        style={"frameBorder": "0", "width": "100%", "height": "600px"})
 
 card = dbc.Card(
@@ -131,7 +131,8 @@ badges = html.Span(
         dbc.CardImg(src=github, style={"max-width": "2rem"}),
         dbc.Badge("GitHub", pill=True, color="secondary", className="mr-1", href="https://github.com/sitongye"),
         dbc.CardImg(src=linkedin, style={"max-width": "2rem"}),
-        dbc.Badge("Linkedin", pill=True, color="primary", className="mr-1", href="https://www.linkedin.com/in/sitong-ye/"),
+        dbc.Badge("Linkedin", pill=True, color="primary", className="mr-1",
+                  href="https://www.linkedin.com/in/sitong-ye/"),
         dbc.CardImg(src=upwork, style={"max-width": "1.5rem"}),
         dbc.Badge("Upwork", pill=True, color="success", className="mr-1",
                   href="https://www.upwork.com/o/profiles/users/~0107c536920b1fb3f1/")
@@ -150,13 +151,14 @@ jumbotron = dbc.Row(
                         badges,
                         html.Hr(),
                         dbc.Row([
-                            dbc.Col(className="blockquote col-12 col-sm-4",children=[
+                            dbc.Col(className="blockquote col-12 col-sm-4", children=[
                                 html.P(""),
                                 html.P("Bonn, Germany"),
                                 html.Br(),
                                 html.Br(),
-                                html.P("A Machine Learning Data Scientist, who occasionally spares her passion for espresso and drumming.",
-                                       className="text-primary")]),
+                                html.P(
+                                    "A Machine Learning Data Scientist, who occasionally spares her passion for espresso and drumming.",
+                                    className="text-primary")]),
                             dbc.Col(html.Div(), width=2),
                             dbc.Col(className="text-muted", children=[
                                 html.Br(),
@@ -252,12 +254,12 @@ def switch_tab(at):
                                        ], color="primary", outline=True), html.Br(),
                               dbc.Alert(id="alert",
                                         children=[html.Li([string], className="ul") for
-                                                                    string in
-                                                                    df_work.iloc[0, :]["Experience"].split(
-                                                                        r"\n")], color="primary",
+                                                  string in
+                                                  df_work.iloc[0, :]["Experience"].split(
+                                                      r"\n")], color="primary",
                                         ),
                               ]), html.Iframe(className="embed-responsive-item", id="work_map",
-                                              srcDoc=open('./assets/bonn.html', 'r').read(),
+                                              src='./assets/bonn.html',
                                               style={"frameBorder": "0", "width": "100%",
                                                      "height": "100%"
                                                      }),
@@ -324,9 +326,8 @@ def switch_tab(at):
                                                                                                 color="primary",
                                                                                                 ),
                                                                                       ])), html.Iframe(id="edu_map",
-                                                                                                       srcDoc=open(
-                                                                                                           './assets/frankfurt_school.html',
-                                                                                                           'r').read(),
+                                                                                                       src=r'./assets/frankfurt_school.html',
+
                                                                                                        style={
                                                                                                            "frameBorder": "0",
                                                                                                            "width": "100%",
@@ -395,9 +396,9 @@ def switch_tab(at):
                                                                                                 color="primary",
                                                                                                 ),
                                                                                       ])), html.Iframe(id="extra_map",
-                                                                                                       srcDoc=open(
-                                                                                                           './assets/frankfurt_school.html',
-                                                                                                           'r').read(),
+                                                                                                       src=
+                                                                                                       './assets/frankfurt_school.html'
+                                                                                                       ,
                                                                                                        style={
                                                                                                            "frameBorder": None,
                                                                                                            "width": "100%",
@@ -405,11 +406,11 @@ def switch_tab(at):
     return html.P("This shouldn't ever be displayed...")
 
 
-@app.callback([Output("work_card", "children"), Output("alert", "children"), Output("work_map", "srcDoc")],
+@app.callback([Output("work_card", "children"), Output("alert", "children"), Output("work_map", "src")],
               [Input("work_slider", "value")])
 def change_card_content(value):
     html_key = df_work.iloc[value - 1, :]["location_key"]
-    src = open('./assets/{}.html'.format(html_key), 'r').read()
+    src = './assets/{}.html'.format(html_key)
     return [
                dbc.CardHeader(df_work.iloc[value - 1, :]["time"]),
                dbc.CardBody(
@@ -423,14 +424,14 @@ def change_card_content(value):
                    ]
                ),
            ], [html.Li([string], className="ul") for string in
-                                 df_work.iloc[value - 1, :]["Experience"].split("\n")], src
+               df_work.iloc[value - 1, :]["Experience"].split("\n")], src
 
 
-@app.callback([Output("edu_card", "children"), Output("alert_edu", "children"), Output("edu_map", "srcDoc")],
+@app.callback([Output("edu_card", "children"), Output("alert_edu", "children"), Output("edu_map", "src")],
               [Input("edu_slider", "value")])
 def change_card_content(value):
     html_key = df_education.iloc[value - 1, :]["location_key"]
-    src = open('./assets/{}.html'.format(html_key), 'r').read()
+    src = r'./assets/{}.html'.format(html_key)
     return [
                dbc.CardHeader(df_education.iloc[value - 1, :]["time"]),
                dbc.CardBody(
@@ -447,11 +448,11 @@ def change_card_content(value):
                df_education.iloc[value - 1, :]["Experience"].split(r"\n")], src
 
 
-@app.callback([Output("extra_card", "children"), Output("alert_extra", "children"), Output("extra_map", "srcDoc")],
+@app.callback([Output("extra_card", "children"), Output("alert_extra", "children"), Output("extra_map", "src")],
               [Input("extra_slider", "value")])
 def change_card_content(value):
     html_key = df_extracurricular.iloc[value - 1, :]["location_key"]
-    src = open('./assets/{}.html'.format(html_key), 'r').read()
+    src = r'./assets/{}.html'.format(html_key)
     return [
                dbc.CardHeader(df_extracurricular.iloc[value - 1, :]["time"]),
                dbc.CardBody(
@@ -465,7 +466,7 @@ def change_card_content(value):
                    ]
                ),
            ], [html.Li([string], className="ul") for string in
-                                 df_extracurricular.iloc[value - 1, :]["Experience"].split(r"\n")], src
+               df_extracurricular.iloc[value - 1, :]["Experience"].split(r"\n")], src
 
 
 if __name__ == '__main__':
