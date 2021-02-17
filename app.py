@@ -155,7 +155,7 @@ jumbotron = dbc.Row(
                                 html.P("Bonn, Germany"),
                                 html.Br(),
                                 html.Br(),
-                                html.P("A Machine Learning Data Scientist, who occasionally spares time for espresso and drumming.",
+                                html.P("A Machine Learning Data Scientist, who occasionally spares her passion for espresso and drumming.",
                                        className="text-primary")]),
                             dbc.Col(html.Div(), width=2),
                             dbc.Col(className="text-muted", children=[
