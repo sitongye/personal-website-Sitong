@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output
 import pandas as pd
 import os
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY], suppress_callback_exceptions=True, meta_tags=[
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY], suppress_callback_exceptions=True, meta_tags=[
     {"name": "viewport", "content": "width=device-width, initial-scale=1"}
 ])
 
@@ -129,9 +129,9 @@ row2 = dbc.Row([dbc.Col(card_lan, className="col-12 col-sm-4 mt-1"),
 badges = html.Span(
     [
         dbc.CardImg(src=github, style={"max-width": "2rem"}),
-        dbc.Badge("GitHub", pill=True, color="secondary", className="mr-1", href="https://github.com/sitongye"),
+        dbc.Badge("GitHub", pill=True, color="primary", className="mr-1", href="https://github.com/sitongye"),
         dbc.CardImg(src=linkedin, style={"max-width": "2rem"}),
-        dbc.Badge("Linkedin", pill=True, color="info", className="mr-1", href="https://www.linkedin.com/in/sitong-ye/"),
+        dbc.Badge("Linkedin", pill=True, color="primary", className="mr-1", href="https://www.linkedin.com/in/sitong-ye/"),
         dbc.CardImg(src=upwork, style={"max-width": "1.5rem"}),
         dbc.Badge("Upwork", pill=True, color="success", className="mr-1",
                   href="https://www.upwork.com/o/profiles/users/~0107c536920b1fb3f1/")
@@ -247,12 +247,12 @@ def switch_tab(at):
                                                    ),
                                                ]
                                            ),
-                                       ], color="info", outline=True), html.Br(),
+                                       ], color="primary", outline=True), html.Br(),
                               dbc.Alert(id="alert",
                                         children=[html.Li([string], className="ul") for
                                                                     string in
                                                                     df_work.iloc[0, :]["Experience"].split(
-                                                                        r"\n")], color="info",
+                                                                        r"\n")], color="primary",
                                         ),
                               ]), html.Iframe(className="embed-responsive-item", id="work_map",
                                               srcDoc=open('./assets/bonn.html', 'r').read(),
@@ -307,7 +307,7 @@ def switch_tab(at):
                                                                                                            ),
                                                                                                        ]
                                                                                                    ),
-                                                                                               ], color="info",
+                                                                                               ], color="primary",
                                                                                                outline=True), html.Br(),
                                                                                       dbc.Alert(id="alert_edu",
                                                                                                 children=[
@@ -319,7 +319,7 @@ def switch_tab(at):
                                                                                                     :][
                                                                                                         "Experience"].split(
                                                                                                         r"\n")],
-                                                                                                color="info",
+                                                                                                color="primary",
                                                                                                 ),
                                                                                       ])), html.Iframe(id="edu_map",
                                                                                                        srcDoc=open(
@@ -377,7 +377,7 @@ def switch_tab(at):
                                                                                                            ),
                                                                                                        ]
                                                                                                    ),
-                                                                                               ], color="info",
+                                                                                               ], color="primary",
                                                                                                outline=True), html.Br(),
                                                                                       dbc.Alert(id="alert_extra",
                                                                                                 children=[
@@ -390,7 +390,7 @@ def switch_tab(at):
                                                                                                     :][
                                                                                                         "Experience"].split(
                                                                                                         r"\n")],
-                                                                                                color="info",
+                                                                                                color="primary",
                                                                                                 ),
                                                                                       ])), html.Iframe(id="extra_map",
                                                                                                        srcDoc=open(
