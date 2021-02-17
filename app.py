@@ -129,7 +129,7 @@ row2 = dbc.Row([dbc.Col(card_lan, className="col-12 col-sm-4 mt-1"),
 badges = html.Span(
     [
         dbc.CardImg(src=github, style={"max-width": "2rem"}),
-        dbc.Badge("GitHub", pill=True, color="primary", className="mr-1", href="https://github.com/sitongye"),
+        dbc.Badge("GitHub", pill=True, color="secondary", className="mr-1", href="https://github.com/sitongye"),
         dbc.CardImg(src=linkedin, style={"max-width": "2rem"}),
         dbc.Badge("Linkedin", pill=True, color="primary", className="mr-1", href="https://www.linkedin.com/in/sitong-ye/"),
         dbc.CardImg(src=upwork, style={"max-width": "1.5rem"}),
@@ -150,12 +150,14 @@ jumbotron = dbc.Row(
                         badges,
                         html.Hr(),
                         dbc.Row([
-                            dbc.Col([
+                            dbc.Col(className="blockquote col-12 col-sm-4",children=[
                                 html.P(""),
-                                html.P("53227, Bonn"),
-                                html.P("+4915174211571"),
-                                html.P("sitongye94@outlook.com")], width=3),
-                            dbc.Col(html.Div(), width=4),
+                                html.P("Bonn, Germany"),
+                                html.Br(),
+                                html.Br(),
+                                html.P("A Machine Learning Data Scientist, who occasionally spares time for espresso and drumming.",
+                                       className="text-primary")]),
+                            dbc.Col(html.Div(), width=2),
                             dbc.Col(className="text-muted", children=[
                                 html.Br(),
                                 html.P("const me=new DataScientist();"),
@@ -273,10 +275,10 @@ def switch_tab(at):
                                                                                                   min=1,
                                                                                                   max=4,
                                                                                                   marks={
-                                                                                                      1: "09/2018-06/2020",
-                                                                                                      2: "9/2013-07/2018",
-                                                                                                      3: "09/2016-2/2017",
-                                                                                                      4: "09/2010-07/2013",
+                                                                                                      1: "2018-2020",
+                                                                                                      2: "2013-2018",
+                                                                                                      3: "2016-2017",
+                                                                                                      4: "2010-2013",
                                                                                                   },
                                                                                                   value=1,
                                                                                                   step=None
