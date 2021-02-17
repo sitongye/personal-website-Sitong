@@ -9,6 +9,8 @@ import os
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY], suppress_callback_exceptions=True, meta_tags=[
     {"name": "viewport", "content": "width=device-width, initial-scale=1"}
 ])
+
+app.title = "Sitong Ye's Official Website"
 img = app.get_asset_url("43437160.jpeg")
 linkedin = app.get_asset_url("linkedin-3000959_960_720.png")
 github = app.get_asset_url("GitHub-Mark.png")
@@ -25,7 +27,7 @@ card = dbc.Card(
             html.H5("IT", className="card-title"),
             dbc.Row([dbc.Col([
                 html.Br(),
-                "Python:    proficient",
+                "Python:    Proficient",
                 html.Div(className="progress",
                          children=html.Div(className="progress-bar progress-bar-striped bg-success",
                                            role="progressbar", style={"width": "85%"})),
@@ -47,7 +49,7 @@ card = dbc.Card(
                              children=html.Div(className="progress-bar progress-bar-striped bg-success",
                                                role="progressbar", style={"width": "80%"})),
                     html.Br(),
-                    "Data Visualisation (Tableau, Dash):  proficient",
+                    "Data Visualisation (Tableau, Dash):  Proficient",
                     html.Div(className="progress",
                              children=html.Div(className="progress-bar progress-bar-striped bg-info",
                                                role="progressbar", style={"width": "70%"})),
@@ -59,7 +61,7 @@ card = dbc.Card(
                     html.Br(),
                     "Web Scrapping: Proficient",
                     html.Div(className="progress",
-                             children=html.Div(className="progress-bar progress-bar-striped bg-danger",
+                             children=html.Div(className="progress-bar progress-bar-striped bg-success",
                                                role="progressbar", style={"width": "90%"}))
                 ])])
         ]
@@ -91,7 +93,7 @@ card_lan = dbc.Card(
 
 )
 
-tabs = dbc.Container(fluid=True, children=
+tabs = dbc.Container(children=
 [
     dbc.Tabs(
         [
@@ -118,11 +120,11 @@ tabs = dbc.Container(fluid=True, children=
                 ),
             ], )])), id="content"),
 ]
-                     )
+)
 
-row2 = dbc.Row([dbc.Col(card_lan, width=4),
-                dbc.Col(card, width=8)],
-               className="ml-2 mr-2 mt-2 mb-2 h-50")
+row2 = dbc.Row([dbc.Col(card_lan, className="col-12 col-sm-4 mt-1"),
+                dbc.Col(card, className="col-12 col-sm-8 mt-2")],
+               className="mt-2 mb-2 h-50")
 
 badges = html.Span(
     [
@@ -168,12 +170,17 @@ jumbotron = dbc.Row(
                         dbc.Col(dbc.CardImg(src=img, style={"max-width": "20rem"}), width=3)])])
     ))
 
-app.layout = dbc.Container([jumbotron,
-                            dbc.Row([dbc.Col(dbc.Container(fluid=True,id="map_container",
-                                                           children=html.Iframe(),
-                                                           className="h-100"), width=4),
-                                     dbc.Col(tabs, width=8)],
-                                    className="ml-2 mr-2 mt-2 mb-2 h-50"), row2], fluid=True)
+app.layout = dbc.Container(fluid=True, children=[
+    jumbotron, dbc.Container(fluid=True, children=[
+        dbc.Row(children=[dbc.Col(html.Div(id="map_container",
+                                           children=html.Iframe(),
+                                           style={"height": "100%", "width": "auto"}),
+                                  className="col-12 col-sm-4",
+                                  ),
+                          dbc.Col(tabs,
+                                  className="col-12 col-sm-8 mt-2")],
+                className="mt-2 mb-2"),
+        row2])])
 
 # card with header
 card_content = [
@@ -211,7 +218,7 @@ def switch_tab(at):
         return dbc.Container([html.Br(),
                               dbc.Row([
                                   dbc.Col(dbc.Badge("select on the timeline here", color="dark",
-                                                    className="mr-1"), width=3),
+                                                    ), className="col-12 col-sm-3"),
                                   dbc.Col(
                                       dcc.Slider(id="work_slider",
                                                  min=1,
@@ -225,7 +232,7 @@ def switch_tab(at):
                                                  },
                                                  value=1,
                                                  step=None
-                                                 ), width=9)]),
+                                                 ), className="col-12 col-sm-9")]),
                               dbc.Card(id="work_card",
                                        children=[
                                            dbc.CardHeader(df_work.iloc[0, :]["time"]),
@@ -242,16 +249,16 @@ def switch_tab(at):
                                            ),
                                        ], color="info", outline=True), html.Br(),
                               dbc.Alert(id="alert",
-                                        children=[html.Br()] * 2 + [html.Li([string], className="ul") for
+                                        children=[html.Li([string], className="ul") for
                                                                     string in
                                                                     df_work.iloc[0, :]["Experience"].split(
                                                                         r"\n")], color="info",
-                                        style={"height": "250px",
-                                               "textIndent": "20px"}),
-                              ]), html.Iframe(className="embed-responsive-item",id="work_map", srcDoc=open('./assets/bonn.html', 'r').read(),
+                                        ),
+                              ]), html.Iframe(className="embed-responsive-item", id="work_map",
+                                              srcDoc=open('./assets/bonn.html', 'r').read(),
                                               style={"frameBorder": "0", "width": "100%",
                                                      "height": "100%"
-                                                    }),
+                                                     }),
     elif at == "tab-2":
         return dbc.Container(fluid=True, children=dbc.Container(fluid=True, children=[html.Br(),
                                                                                       dbc.Row([
@@ -259,7 +266,7 @@ def switch_tab(at):
                                                                                               "select on the timeline here",
                                                                                               color="dark",
                                                                                               className="mr-1"),
-                                                                                              width=3),
+                                                                                              className="col-12 col-sm-3"),
                                                                                           dbc.Col(
                                                                                               dcc.Slider(
                                                                                                   id="edu_slider",
@@ -273,7 +280,8 @@ def switch_tab(at):
                                                                                                   },
                                                                                                   value=1,
                                                                                                   step=None
-                                                                                              ), width=9)]),
+                                                                                              ),
+                                                                                              className="col-12 col-sm-9")]),
                                                                                       dbc.Card(id="edu_card",
                                                                                                children=[
                                                                                                    dbc.CardHeader(
@@ -312,9 +320,7 @@ def switch_tab(at):
                                                                                                         "Experience"].split(
                                                                                                         r"\n")],
                                                                                                 color="info",
-                                                                                                style={
-                                                                                                    "height": "250px",
-                                                                                                    "textIndent": "20px"}),
+                                                                                                ),
                                                                                       ])), html.Iframe(id="edu_map",
                                                                                                        srcDoc=open(
                                                                                                            './assets/frankfurt_school.html',
@@ -322,7 +328,7 @@ def switch_tab(at):
                                                                                                        style={
                                                                                                            "frameBorder": "0",
                                                                                                            "width": "100%",
-                                                                                                           "height": "600px"}),
+                                                                                                           "height": "100%"}),
     elif at == "tab-3":
         return dbc.Container(fluid=True, children=dbc.Container(fluid=True, children=[html.Br(),
                                                                                       dbc.Row([
@@ -330,7 +336,7 @@ def switch_tab(at):
                                                                                               "select on the timeline here",
                                                                                               color="dark",
                                                                                               className="mr-1"),
-                                                                                              width=3),
+                                                                                              className="col-12 col-sm-3"),
                                                                                           dbc.Col(
                                                                                               dcc.Slider(
                                                                                                   id="extra_slider",
@@ -344,7 +350,8 @@ def switch_tab(at):
                                                                                                   },
                                                                                                   value=1,
                                                                                                   step=None
-                                                                                              ), width=9)]),
+                                                                                              ),
+                                                                                              className="col-12 col-sm-9")]),
                                                                                       dbc.Card(id="extra_card",
                                                                                                children=[
                                                                                                    dbc.CardHeader(
@@ -384,15 +391,13 @@ def switch_tab(at):
                                                                                                         "Experience"].split(
                                                                                                         r"\n")],
                                                                                                 color="info",
-                                                                                                style={
-                                                                                                    "height": "250px",
-                                                                                                    "textIndent": "20px"}),
+                                                                                                ),
                                                                                       ])), html.Iframe(id="extra_map",
                                                                                                        srcDoc=open(
                                                                                                            './assets/frankfurt_school.html',
                                                                                                            'r').read(),
                                                                                                        style={
-                                                                                                           "frameBorder": "0",
+                                                                                                           "frameBorder": None,
                                                                                                            "width": "100%",
                                                                                                            "height": "100%"}),
     return html.P("This shouldn't ever be displayed...")
@@ -415,7 +420,7 @@ def change_card_content(value):
                        ),
                    ]
                ),
-           ], [html.Br()] * 2 + [html.Li([string], className="ul") for string in
+           ], [html.Li([string], className="ul") for string in
                                  df_work.iloc[value - 1, :]["Experience"].split("\n")], src
 
 
@@ -457,7 +462,7 @@ def change_card_content(value):
                        ),
                    ]
                ),
-           ], [html.Br()] * 2 + [html.Li([string], className="ul") for string in
+           ], [html.Li([string], className="ul") for string in
                                  df_extracurricular.iloc[value - 1, :]["Experience"].split(r"\n")], src
 
 
