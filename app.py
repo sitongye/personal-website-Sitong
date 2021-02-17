@@ -5,8 +5,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import pandas as pd
 import os
-
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY], suppress_callback_exceptions=True, meta_tags=[
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY],suppress_callback_exceptions=True, meta_tags=[
     {"name": "viewport", "content": "width=device-width, initial-scale=1"}
 ])
 
@@ -24,7 +23,7 @@ map_bonn = html.Iframe(src=r"./assets/bonn.html",
 card = dbc.Card(
     dbc.CardBody(
         [
-            html.H5("IT", className="card-title"),
+            html.H5("IT skills", className="card-title"),
             dbc.Row([dbc.Col([
                 html.Br(),
                 "Python:    Proficient",
@@ -146,17 +145,17 @@ jumbotron = dbc.Row(
             [
                 dbc.Row(
                     [dbc.Col([
-                        html.H3("Hello World!"),
+                        html.H3("Hello, World!"),
                         html.H1("This is Sitong Ye", className="display-3"),
                         badges,
                         html.Hr(),
                         dbc.Row([
                             dbc.Col(className="blockquote col-12 col-sm-4", children=[
                                 html.P(""),
-                                html.P("Bonn, Germany"),
+                                html.H5("Bonn, Germany"),
                                 html.Br(),
                                 html.Br(),
-                                html.P(
+                                html.H5(
                                     "A Machine Learning Data Scientist, who occasionally spares her passion for espresso and drumming.",
                                     className="text-primary")]),
                             dbc.Col(html.Div(), width=2),
@@ -244,7 +243,8 @@ def switch_tab(at):
                                                [
                                                    html.H4(df_work.iloc[0, :]["company"],
                                                            className="card-title"),
-                                                   html.H5(df_work.iloc[0, :]["Role"], className="card-title"),
+                                                   html.P(df_work.iloc[0, :]["Role"], className="card-title",
+                                                          style={"fontSize": "1.171875rem"}),
                                                    html.P(
                                                        df_work.iloc[0, :]["location"],
                                                        className="card-text",
@@ -298,11 +298,11 @@ def switch_tab(at):
                                                                                                                0, :][
                                                                                                                    "school"],
                                                                                                                className="card-title"),
-                                                                                                           html.H5(
+                                                                                                           html.P(
                                                                                                                df_education.iloc[
                                                                                                                0, :][
                                                                                                                    "Role"],
-                                                                                                               className="card-title"),
+                                                                                                               className="card-title", style={"fontSize": "1.171875rem"}),
                                                                                                            html.P(
                                                                                                                df_education.iloc[
                                                                                                                0, :][
@@ -367,11 +367,11 @@ def switch_tab(at):
                                                                                                                0, :][
                                                                                                                    "Insitut"],
                                                                                                                className="card-title"),
-                                                                                                           html.H5(
+                                                                                                           html.P(
                                                                                                                df_extracurricular.iloc[
                                                                                                                0, :][
                                                                                                                    "Role"],
-                                                                                                               className="card-title"),
+                                                                                                               className="card-title", style={"fontSize": "1.171875rem"}),
                                                                                                            html.P(
                                                                                                                df_extracurricular.iloc[
                                                                                                                0, :][
@@ -416,7 +416,7 @@ def change_card_content(value):
                dbc.CardBody(
                    [
                        html.H4(df_work.iloc[value - 1, :]["company"], className="card-title"),
-                       html.H5(df_work.iloc[value - 1, :]["Role"], className="card-title"),
+                       html.P(df_work.iloc[value - 1, :]["Role"], className="card-title", style={"fontSize": "1.171875rem"}),
                        html.P(
                            df_work.iloc[value - 1, :]["location"],
                            className="card-text",
@@ -437,7 +437,7 @@ def change_card_content(value):
                dbc.CardBody(
                    [
                        html.H4(df_education.iloc[value - 1, :]["school"], className="card-title"),
-                       html.H5(df_education.iloc[value - 1, :]["Role"], className="card-title"),
+                       html.P(df_education.iloc[value - 1, :]["Role"], className="card-title", style={"fontSize": "1.171875rem"}),
                        html.P(
                            df_education.iloc[value - 1, :]["location"],
                            className="card-text",
@@ -458,7 +458,7 @@ def change_card_content(value):
                dbc.CardBody(
                    [
                        html.H4(df_extracurricular.iloc[value - 1, :]["Insitut"], className="card-title"),
-                       html.H5(df_extracurricular.iloc[value - 1, :]["Role"], className="card-title"),
+                       html.P(df_extracurricular.iloc[value - 1, :]["Role"], className="card-title", style={"fontSize": "1.171875rem"}),
                        html.P(
                            df_extracurricular.iloc[value - 1, :]["location"],
                            className="card-text",
