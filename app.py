@@ -74,7 +74,7 @@ card_lan = dbc.Card(
         [
             html.H5("Language Skill", className="card-title"),
             "Mandarin", html.Br(),
-            "Mother Language",
+            "Mother Tongue",
             html.Div(className="progress", children=html.Div(className="progress-bar progress-bar-striped bg-success",
                                                              role="progressbar", style={"width": "100%"})),
             html.Br(),
